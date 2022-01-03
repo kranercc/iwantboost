@@ -19,7 +19,7 @@ function App() {
                             color: {
                             },
                         },
-                        fpsLimit: 300,
+                        fpsLimit: 144,
                         interactivity: {
                             events: {
                                 onClick: {
@@ -40,7 +40,7 @@ function App() {
                                     size: 40,
                                 },
                                 push: {
-                                    quantity: 4,
+                                    quantity: 3,
                                 },
                                 repulse: {
                                     distance: 200,
@@ -57,7 +57,7 @@ function App() {
                                 distance: 150,
                                 enable: true,
                                 opacity: 0.5,
-                                width: 1,
+                                width: 0.8,
                             },
                             collisions: {
                                 enable: true,
@@ -67,7 +67,7 @@ function App() {
                                 enable: true,
                                 outMode: "bounce",
                                 random: false,
-                                speed: 6,
+                                speed: 2,
                                 straight: false,
                             },
                             number: {
@@ -75,7 +75,7 @@ function App() {
                                     enable: true,
                                     area: 800,
                                 },
-                                value: 80,
+                                value: 30,
                             },
                             opacity: {
                                 value: 0.5,

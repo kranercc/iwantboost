@@ -189,5 +189,84 @@ body::-webkit-scrollbar {
   text-align: center;
   justify-content: center;
   align-items: center;
+  /* make it look like a card */
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "picture, text, buttons";
+  background-color: rgb(40,38,81);
+  color: white;
+  padding: 10px;
+  align-items: flex-end;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
+  
+}
+
+.title_landing_page {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  
+}
+
+.underline {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(1,170,193);
+
+}
+
+.description_landing_page {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+
+  color: #9b9999;
+  font-size: smaller;
+  
+}
+
+.supported_games {
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "title" "game1" "game2";
+  /* get them closer */
+  text-align: left;
+  color: #9b9999;
+  font-size: smaller;
+  
+}
+
+.game_iconname_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_close_to_name {
+  text-align: right;
+}
+
+.game_name {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10px;
+  justify-content: center;
+  align-items: center;
+
+  color: #9b9999;
+  font-size: smaller;
 }
