@@ -152,3 +152,42 @@ body::-webkit-scrollbar {
   
 
 }
+
+
+.landingpage {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(-45deg, #201d52, #302f50, #070444);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite; 
+
+}
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.landingpage_elements{
+  /* center div */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #b4b4b4;
+  padding: 10px;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  
+}
