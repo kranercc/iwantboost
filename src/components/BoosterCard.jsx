@@ -13,11 +13,16 @@ import Typography from '@mui/material/Typography';
 //card color #233454
 
 class BoosterCard extends React.Component {
+
+    ContactBooster(data) {
+        console.log(data.target.id)
+    }
+
     render() {
         return (
             <div>
                 
-                <Card  className="card" sx={{
+                <Card className="card" sx={{
                     width: 345,
                     height: 345,
                     //make it look like a card
@@ -69,7 +74,7 @@ class BoosterCard extends React.Component {
                             gridGap: '10px',
                         }}>
 
-                            <Button variant="outlined" size="small">Contact Booster</Button>
+                            <Button  id={this.props.id} onClick={this.ContactBooster} variant="outlined" size="small">Contact Booster</Button>
                             <Button variant="outlined" size="small">Report Booster</Button>
                         </div>
 
