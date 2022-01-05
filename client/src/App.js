@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import "./mui.css"
 import BoosterCard from './components/BoosterCard';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
@@ -11,7 +12,8 @@ import Particles from "react-tsparticles";
 function App() {
     return (
         <div className="App">
-            
+            <div className='background_body'></div>
+
             <div className='landingpage' id="landing">    
                 <Particles
                     id="tsparticles"

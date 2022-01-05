@@ -15,7 +15,23 @@
 }
 
 body {
-  background-color: #282c34;
+  background-color: rgb(40, 40, 40);
+}
+
+.background_body {
+  background-image: url("https://dmarket.com/blog/best-dota2-wallpapers/jager1_hu1b4a36ef01c87d5ebc4581a2b5b7191b_364471_1920x1080_resize_q75_lanczos.jpg");
+  /* background-image: url("https://images8.alphacoders.com/987/thumb-1920-987730.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  position: absolute;
+  opacity: 0.17;
+  filter: blur(5px);
+
 }
 
 .becomeabooster {
@@ -49,12 +65,20 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   border-bottom: 4px solid  rgb(24, 22, 47);
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  z-index: 1;
 }
 
 
 .sidebar {
-  height: 100vh;
-  float: left;
+  height: 100%;
+  /* float: left; */
+  position: fixed;
+  left: 0;
+  top: 80px;
+  
   padding: 10px;
   width: 25px;
   background-color: rgb(40,38,81);
@@ -112,6 +136,8 @@ body {
   
   /*  grid-template-columns: repeat(for however many there can fit on the page); */
   grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+  padding-left: 50px;
+  padding-top: 80px;
 }
 
 .App {

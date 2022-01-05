@@ -88,10 +88,11 @@ class BoosterCard extends React.Component {
                             }}>
                                 <a style={{
                                     // color: "#8b8c8f"
-                                    color: "#d4d4d4"
+                                    // color: "#d4d4d4"
+                                    color: "#dbdbdb"
                                 }}>{this.props.booster_name}</a>
                                 <a style={{
-                                    color: "#d4d4d4",
+                                    color: "#dbdbdb",
                                     textAlign: "right"
                                 }}>{this.props.mmr}</a>
                             </div>
@@ -111,8 +112,8 @@ class BoosterCard extends React.Component {
                             gridGap: '10px',
                         }}>
 
-                            <Button  id={this.props.id} onClick={this.ContactBooster} variant="outlined" size="small">{this.state.contact_button_text}</Button>
-                            <Button variant="outlined" size="small">Report Booster</Button>
+                            <Button className='outlined_button' id={this.props.id} onClick={this.ContactBooster} variant="outlined" size="small">{this.state.contact_button_text}</Button>
+                            <Button className='outlined_button' variant="outlined" size="small">Report Booster</Button>
                         </div>
 
                     </CardActions>
