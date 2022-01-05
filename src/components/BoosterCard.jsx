@@ -9,15 +9,52 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import reactDom from 'react-dom';
 
 //card color #233454
 
 class BoosterCard extends React.Component {
 
-    ContactBooster(data) {
-        console.log(data.target.id)
+    //make a changable text for the description of the booster
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            description: this.props.booster_description,
+            contact_button_text: "Contact Booster"
+        }
+
+        this.ContactBooster = this.ContactBooster.bind(this);
     }
 
+
+    ContactBooster(data) {
+        console.log(data.target.id)
+        
+        this.setState({
+            description: 
+            <div>
+                <center><a style={{color: "#8b8c8f"}}>Contact</a></center>
+  
+                {this.props.discord ? <div><a style={{color: "#8b8c8f",}}>Discord: {this.props.discord}</a><br/></div> :  <a style={{color: "#8b8c8f",}}>No contact info available</a>}
+                {this.props.email ? <div><a style={{color: "#8b8c8f",}}>Email: {this.props.email}</a><br/></div> :  null}
+            </div>        
+        })   
+        this.setState({
+            contact_button_text: "See booster info"
+        })
+
+        {if (this.state.contact_button_text === "See booster info") { 
+            this.setState({
+                contact_button_text: "Contact Booster"
+            })
+            this.setState({
+                description: this.props.booster_description
+            })
+
+        }}
+
+    }
     render() {
         return (
             <div>
@@ -63,7 +100,7 @@ class BoosterCard extends React.Component {
                         <Typography variant="body2" color="text.secondary">
                             <a style={{
                                 color: "#8b8c8f",  
-                            }}>{this.props.booster_description}</a>
+                            }}>{this.state.description}</a>
                         </Typography>
                     </CardContent>
                     <CardActions>
@@ -74,7 +111,7 @@ class BoosterCard extends React.Component {
                             gridGap: '10px',
                         }}>
 
-                            <Button  id={this.props.id} onClick={this.ContactBooster} variant="outlined" size="small">Contact Booster</Button>
+                            <Button  id={this.props.id} onClick={this.ContactBooster} variant="outlined" size="small">{this.state.contact_button_text}</Button>
                             <Button variant="outlined" size="small">Report Booster</Button>
                         </div>
 

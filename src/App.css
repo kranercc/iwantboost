@@ -178,7 +178,6 @@ body::-webkit-scrollbar {
   background: linear-gradient(-45deg, #201d52, #302f50, #070444);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite; 
-
 }
 @keyframes gradient {
   0% {
@@ -190,6 +189,21 @@ body::-webkit-scrollbar {
   100% {
       background-position: 0% 50%;
   }
+}
+
+/* https://www.wallpapers13.com/wp-content/uploads/2017/06/Dota-2-game-characters-Phantom-Assassin-Arcana-HD-Wallpaper-1920x1200-1920x1080.jpg */
+.landingpageBackground {
+  /* put it as a background behind landingpage and show it a bit blurry */
+  background-image: url("https://www.wallpapers13.com/wp-content/uploads/2017/06/Dota-2-game-characters-Phantom-Assassin-Arcana-HD-Wallpaper-1920x1200-1920x1080.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  opacity: 0.27;
+  width: 100vw;
+  height: 100vh;
+
+
 }
 
 .landingpage_elements{
