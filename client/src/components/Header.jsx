@@ -16,10 +16,15 @@ class Header extends React.Component {
         return (
             <div className="header">
                 <div className='logo'>
-                    <img stype={{width: "50px"}} src={"https://i.imgur.com/5IkRSrj.png"} alt="mainlogo" />
+                    <img className='logoimg' src={"https://i.imgur.com/5IkRSrj.png"} alt="mainlogo" />
                 </div>
                 <div className="becomeabooster">
-                    <Button className='contained_button' variant="contained" color="primary">Become a Booster</Button>                
+                    <Button style={{
+                        color: "#ebebeb",
+                        backgroundColor: "#3e4c9b",
+                        fontSize: "13px",
+                        marginRight: "10%",
+                    }} variant="contained" color="primary">Become a Booster</Button>                
                 </div>
             </div>
         );

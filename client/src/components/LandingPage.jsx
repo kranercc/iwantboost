@@ -45,7 +45,9 @@ class LandingPage extends React.Component {
                     </div>
                 </div>
                 <br/>
-                <Button variant="outlined" onClick={this.GoToWebsite}>Go to Website</Button>
+                <Button style={{
+                        color: "#7481ca",
+                }} className='outlined_button' variant="outlined" onClick={this.GoToWebsite}>Go to Website</Button>
                
             </div>
         );

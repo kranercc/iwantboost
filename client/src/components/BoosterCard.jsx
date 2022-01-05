@@ -9,14 +9,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import reactDom from 'react-dom';
 
 //card color #233454
 
 class BoosterCard extends React.Component {
 
     //make a changable text for the description of the booster
-    
+
     constructor(props) {
         super(props);
         this.state = {
@@ -30,39 +29,43 @@ class BoosterCard extends React.Component {
 
     ContactBooster(data) {
         console.log(data.target.id)
-        
+
         this.setState({
-            description: 
-            <div>
-                <center><a style={{color: "#8b8c8f"}}>Contact</a></center>
-  
-                {this.props.discord ? <div><a style={{color: "#8b8c8f",}}>Discord: {this.props.discord}</a><br/></div> :  <a style={{color: "#8b8c8f",}}>No contact info available</a>}
-                {this.props.email ? <div><a style={{color: "#8b8c8f",}}>Email: {this.props.email}</a><br/></div> :  null}
-            </div>        
-        })   
+            description:
+                <div>
+                    <center><a style={{ color: "#b5b5b5" }}>Contact</a></center>
+
+                    {this.props.discord ? <div><a style={{ color: "#b5b5b5", }}>Discord: {this.props.discord}</a><br /></div> : <a style={{ color: "#8b8c8f", }}>No contact info available</a>}
+                    {this.props.email ? <div><a style={{ color: "#b5b5b5", }}>Email: {this.props.email}</a><br /></div> : null}
+                </div>
+        })
         this.setState({
             contact_button_text: "See booster info"
         })
 
-        {if (this.state.contact_button_text === "See booster info") { 
-            this.setState({
-                contact_button_text: "Contact Booster"
-            })
-            this.setState({
-                description: this.props.booster_description
-            })
+        {
+            if (this.state.contact_button_text === "See booster info") {
+                this.setState({
+                    contact_button_text: "Contact Booster"
+                })
+                this.setState({
+                    description: this.props.booster_description
+                })
 
-        }}
+            }
+        }
 
     }
     render() {
         return (
             <div>
-                
+
                 <Card className="card" sx={{
-                    width: 345,
-                    height: 345,
+                    // width: 345,
+                    // height: 345,
                     //make it look like a card
+                    width: "75%",
+                    height: "80%",
                     boxShadow: '0px 0px 5px 0px rgba(0,0,0,0.75)',
                     borderRadius: '5px',
                     margin: '10px',
@@ -100,7 +103,7 @@ class BoosterCard extends React.Component {
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             <a style={{
-                                color: "#8b8c8f",  
+                                color: "#b5b5b5",
                             }}>{this.state.description}</a>
                         </Typography>
                     </CardContent>
@@ -110,10 +113,20 @@ class BoosterCard extends React.Component {
                             display: 'grid',
                             gridTemplateColumns: '1fr 1fr',
                             gridGap: '10px',
+                            //make it full width
+                            width: "100%"
+
                         }}>
 
-                            <Button className='outlined_button' id={this.props.id} onClick={this.ContactBooster} variant="outlined" size="small">{this.state.contact_button_text}</Button>
-                            <Button className='outlined_button' variant="outlined" size="small">Report Booster</Button>
+                            <Button style={{
+                                color: "#7481ca",
+
+                            }} className='outlined_button' id={this.props.id} onClick={this.ContactBooster} variant="outlined" size="small">{this.state.contact_button_text}</Button>
+
+                            <Button style={{
+                                color: "#7481ca",
+                            }} className='outlined_button' variant="outlined" size="small">Report Booster</Button>
+
                         </div>
 
                     </CardActions>

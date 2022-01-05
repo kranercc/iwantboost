@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import "./mui.css"
+import './mui.css';
 import BoosterCard from './components/BoosterCard';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
