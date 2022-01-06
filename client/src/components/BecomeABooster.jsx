@@ -145,7 +145,7 @@ class BecomeABooster extends React.Component {
                     }}>
 
                     <ReCAPTCHA
-                    sitekey="6LcD2vMdAAAAABEcgrobFui7d1pgDKd_Ijk_7g8X"
+                    sitekey="6LeN1_MdAAAAAG47xcmCZRXbBH31274ZUz-GoEeo"
                     onChange={this.onChange}
                     />,
                     </div>
