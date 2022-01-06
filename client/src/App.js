@@ -9,11 +9,12 @@ import Overlay from './components/Overlay';
 import LandingPage from './components/LandingPage';
 import Particles from "react-tsparticles";
 import BecomeABooster from './components/BecomeABooster';
-
+import ReactNotification from 'react-notifications-component';
 
 function App() {
     return (
         <div className="App">
+            <ReactNotification />
             <div className='background_body'></div>
 
             <div className='landingpage' id="landing">    

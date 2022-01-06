@@ -11,8 +11,9 @@
     box-shadow: 0px 0px 10px #000;
     padding: 20px;
     z-index: 1;
-    width: 60%;
-    height: 65%;
+    /* width: 60%;
+    height: 65%; */
+    
     overflow: hidden;
 
     

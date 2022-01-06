@@ -14,17 +14,7 @@ class Header extends React.Component {
     }
 
     render_BecomeBooster(data) {
-        if (window.innerWidth > 1300) {
-            document.getElementById("become_a_booster_root").style.display = "block";
-        }
-        // else if(window.innerWidth > 700 && window.innerWidth < 1300) {
-        //     document.getElementById("become_a_booster_root").style.display = "block";
-        //     document.getElementById("become_a_booster").style.width = "100%";
-        //     document.getElementById("become_a_booster").style.height = "100%";
-        // }
-        else{
-            console.log("window width is less than 768");
-        }
+        document.getElementById("become_a_booster_root").style.display = "block";
         
 
         /* if esc is pressed, or pressed outside window close it */

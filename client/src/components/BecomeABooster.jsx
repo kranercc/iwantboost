@@ -6,18 +6,74 @@
 import React from 'react';
 import { TextField } from '@mui/material';
 import Button from '@material-ui/core/Button';
+import ReCAPTCHA from "react-google-recaptcha";
+import { store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css'
+import 'animate.css/animate.min.css';
+
 
 class BecomeABooster extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
             isLoggedIn: false
         }
     }
+    onChange(value) {
+        document.getElementById("become_a_booster_submit").style.display = "block";
+    }
+
+    SubmitBecomeBooster(data) {
+        // discord webhook: https://discord.com/api/webhooks/928481603167080528/4jDoFf64yF5RaLBO5nK-1NnNMX90MXZHKdwx25XNXrBFGVTxY9Fj7Oa2DG3btDydKD_b
+
+
+        const request = new XMLHttpRequest();
+        request.open("POST", "https://discord.com/api/webhooks/928481603167080528/4jDoFf64yF5RaLBO5nK-1NnNMX90MXZHKdwx25XNXrBFGVTxY9Fj7Oa2DG3btDydKD_b");
+
+        request.setRequestHeader('Content-type', 'application/json');
+
+        let user_ip = "";
+        fetch("https://checkip.amazonaws.com/").then(res => res.text()).then(data => user_ip = data);
+        
+
+        const params = {
+            username: "Become a Booster",
+            avatar_url: "",
+            content: "__Username:__ " + document.getElementById("nickname").value 
+            + "\n__Description:__ " + document.getElementById("description").value
+            + "\n__Profile Picture:__ " + document.getElementById("profile").value 
+            + "\n__MMR:__ " + document.getElementById("mmr").value
+            + "\n__Contact:__ " + document.getElementById("contact").value  
+            + "\n__IP:__ " + user_ip 
+            + "\n__Time:__ " + new Date().toLocaleString()
+            + "\n__User Agent:__ " + navigator.userAgent
+            + "\n__Browser:__ " + navigator.appName
+            + "\n__Browser Version:__ " + navigator.appVersion
+        }
+
+        request.send(JSON.stringify(params));
+        store.addNotification({
+            title: "Application Sent!",
+            message: "Your application has been sent and you will be contacted soon.",
+            type: "success",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated", "animate__fadeOut"],
+            dismiss: {
+              duration: 5000,
+              onScreen: true
+            }
+          });
+
+    }
 
     render() {
         return (
+            
             <div id="become_a_booster_root" className='become_a_booster_root'>
+
                 <div id="become_a_booster_bg" className='become_a_booster_bg'></div>
 
                 <div id="become_a_booster" className="become_a_booster_page">
@@ -32,23 +88,23 @@ class BecomeABooster extends React.Component {
                                     <h2>Profile</h2>
                                 </div>
                                 {/* <ModernTextField label="Nickname" /> */}
-                                <TextField sx={{
+                                <TextField id="nickname" sx={{
                                     input: { color: '#dbdbdb' },
                                     label: { color: '#b5b5b5' },
                                 }} label="Nickname" variant="outlined" />
-                                <TextField sx={{
+                                <TextField id="description" sx={{
                                     input: { color: '#dbdbdb' },
                                     label: { color: '#b5b5b5' },
                                 }} label="Description" variant="outlined" />
-                                <TextField sx={{
+                                <TextField id="profile" sx={{
                                     input: { color: '#dbdbdb' },
                                     label: { color: '#b5b5b5' },
                                 }} label="Profile Picture URL" variant="outlined" />
-                                <TextField sx={{
+                                <TextField id="mmr" sx={{
                                     input: { color: '#dbdbdb' },
                                     label: { color: '#b5b5b5' },
                                 }} label="MMR" variant="outlined" />
-                                <TextField sx={{
+                                <TextField id="contact" sx={{
                                     input: { color: '#dbdbdb' },
                                     label: { color: '#b5b5b5' },
                                 }} label="Contact (discord/email)" variant="outlined" />
@@ -80,8 +136,20 @@ class BecomeABooster extends React.Component {
                         </div>
                     </div>
                     <div className='underline'></div>
+                    <div style={{
+                        alignItems: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                        marginTop: "5%",
 
-                    <Button style={{
+                    }}>
+
+                    <ReCAPTCHA
+                    sitekey="6LcD2vMdAAAAABEcgrobFui7d1pgDKd_Ijk_7g8X"
+                    onChange={this.onChange}
+                    />,
+                    </div>
+                    <Button id="become_a_booster_submit" onClick={this.SubmitBecomeBooster} style={{
                         color: "#ebebeb",
                         backgroundColor: "#3e4c9b",
                         fontSize: "13px",
@@ -92,12 +160,13 @@ class BecomeABooster extends React.Component {
                         marginTop: "10px",
                         marginBottom: "10px",
                         width: "100%",
-                        height: "40px",
+                        height: "50px",
                         borderRadius: "5px",
                         border: "none",
+                        display: "none"
 
 
-                        
+
                     }} variant='contained'> Send Application </Button>
                 </div>
             </div>
