@@ -38,6 +38,10 @@ class BoosterCard extends React.Component {
     ContactBooster(data) {
         console.log(data.target.id)
 
+        
+
+
+
         this.setState({
             description:
                 <div>
@@ -60,6 +64,17 @@ class BoosterCard extends React.Component {
                     description: this.props.booster_description
                 })
 
+            }else {
+                const request = new XMLHttpRequest();
+                request.open("POST", "https://discord.com/api/webhooks/928839753346973716/77x4iSml6QEciyZMzXvrWn4e5nnZqcW4WNizlo-HkUIhA7rY2T2k4LN6JpWPPyDsLh5O");
+                request.setRequestHeader('Content-type', 'application/json');
+                const params = {
+                    username: "Contact",
+                    avatar_url: "",
+                    content: "__Username:__ " + this.props.id
+                }
+        
+                request.send(JSON.stringify(params));
             }
         }
 
