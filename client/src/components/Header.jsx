@@ -15,7 +15,7 @@ class Header extends React.Component {
 
     render_BecomeBooster(data) {
         document.getElementById("become_a_booster_root").style.display = "block";
-        
+
 
         /* if esc is pressed, or pressed outside window close it */
         window.onkeydown = function (e) {
@@ -41,12 +41,16 @@ class Header extends React.Component {
                     <img onClick={this.refresh_website} className='logoimg' src={"https://i.imgur.com/5IkRSrj.png"} alt="mainlogo" />
                 </div>
                 <div className="becomeabooster">
-                    <Button onClick={this.render_BecomeBooster}  style={{
+                    <div>
+                    <Button onClick={this.render_BecomeBooster} style={{
                         color: "#ebebeb",
                         backgroundColor: "#3e4c9b",
                         fontSize: "13px",
-                        marginRight: "10%",
-                    }} variant="contained" color="primary">Become a Booster</Button>                
+                        marginRight: "5%",
+                    }} variant="contained" color="primary">Become a Booster</Button>
+                    
+                    </div>
+                    
                 </div>
             </div>
         );

@@ -10,7 +10,6 @@ import LandingPage from './components/LandingPage';
 import Particles from "react-tsparticles";
 import BecomeABooster from './components/BecomeABooster';
 import ReactNotification from 'react-notifications-component';
-
 function App() {
     return (
         <div className="App">

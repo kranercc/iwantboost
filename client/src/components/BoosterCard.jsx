@@ -26,6 +26,14 @@ class BoosterCard extends React.Component {
         this.ContactBooster = this.ContactBooster.bind(this);
     }
 
+    ReportBooster(data) {
+        /* open discord link in tab */
+        window.open("https://discord.gg/sFFc72e5UH", '_blank');
+
+
+    }
+
+
 
     ContactBooster(data) {
         console.log(data.target.id)
@@ -123,7 +131,7 @@ class BoosterCard extends React.Component {
 
                             }} className='outlined_button' id={this.props.id} onClick={this.ContactBooster} variant="outlined" size="small">{this.state.contact_button_text}</Button>
 
-                            <Button style={{
+                            <Button onClick={this.ReportBooster} style={{
                                 color: "#7481ca",
                             }} className='outlined_button' variant="outlined" size="small">Report Booster</Button>
 

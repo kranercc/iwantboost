@@ -26,6 +26,7 @@ class LandingPage extends React.Component {
                 </div>
                 <h2 className="description_landing_page"> A boosting platform where you can talk directly with the booster</h2>
                 <h2 className="description_landing_page"> You pay $0 to the website, only pay the booster</h2>
+                
                 <br/>
                 <div className='supported_games'>
                     <h2 className='description_landing_page'> Games </h2>
